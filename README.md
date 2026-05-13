@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# 📊 Sales Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A dynamic, interactive sales data visualization dashboard built with React and HTML5 Canvas — no external charting libraries.
 
-## Available Scripts
+🔗 **Live Demo:** [https://shabising.github.io/sales-chart](https://shabising.github.io/sales-chart)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 📈 **Custom Bar Chart** — built from scratch using HTML5 Canvas API
+- 🎛️ **Interactive Filters** — filter by quarter, category, region, and minimum sales
+- 🎬 **Smooth Animations** — bar transitions using `requestAnimationFrame` + lerp
+- 🖱️ **Hover Tooltips** — detailed data on hover
+- 🌗 **Light/Dark Mode** — manual toggle with `localStorage` persistence
+- 💾 **CSV Export** — download filtered data using Blob API
+- 🔄 **Reset Filters** — one-click filter reset
+- 📱 **Responsive Design** — adapts to all screen sizes using `ResizeObserver`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🏗️ Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+src/
+├── components/
+│   ├── BarChart.jsx       # Canvas-based bar chart
+│   ├── Filters.jsx        # Filter controls
+│   ├── MetricCards.jsx    # Summary metric cards
+│   ├── Tooltip.jsx        # Hover tooltip
+│   └── ErrorBoundary.jsx  # Error handling
+├── context/
+│   └── FilterContext.js   # Global state with Context API
+├── data/
+│   └── salesData.js       # Hardcoded sales data
+├── hooks/
+│   ├── useAnimatedBars.js # Animation hook
+│   ├── useCSVExport.js    # CSV export hook
+│   ├── useDarkMode.js     # Dark mode hook
+│   └── useFilteredData.js # Data filtering hook
+├── App.js
+└── App.css
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ⚙️ Technical Highlights
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### No Chart Libraries
+All chart rendering is done manually using the **Canvas 2D API** — including bars, grid lines, axis labels, rounded corners, and hover detection.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Advanced React Patterns
+- `useReducer` — centralized state management
+- `Context API` — global state without prop drilling
+- `React.memo` — prevents unnecessary re-renders
+- `useCallback` — memoized event handlers
+- Custom hooks — separation of concerns
 
-### `npm run eject`
+### Performance
+- `useMemo` for filtered data computation
+- `cancelAnimationFrame` to cancel stale animations
+- `ResizeObserver` for accurate responsive behavior
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
+- Node.js >= 14
+- npm >= 6
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installation
 
-## Learn More
+```bash
+git clone https://github.com/shabising/sales-chart.git
+cd sales-chart
+npm install
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Run Tests
 
-### Code Splitting
+```bash
+npm test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Build for Production
 
-### Analyzing the Bundle Size
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Deploy to GitHub Pages
 
-### Making a Progressive Web App
+```bash
+npm run deploy
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🛠️ Tech Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+| Technology | Usage |
+|------------|-------|
+| React 18 | UI framework |
+| HTML5 Canvas | Chart rendering |
+| Context API | Global state |
+| localStorage | Filter persistence |
+| Blob API | CSV export |
+| gh-pages | Deployment |
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📸 Screenshots
 
-### `npm run build` fails to minify
+### Light Mode
+![Light Mode](https://shabising.github.io/sales-chart/screenshot-light.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Dark Mode
+![Dark Mode](https://shabising.github.io/sales-chart/screenshot-dark.png)
+
+---
+
+## 📄 License
+
+MIT © [shabising](https://github.com/shabising)
