@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sales-chart/static/css/main.b2c57111.css",
+    "main.js": "/sales-chart/static/js/main.492df109.js",
+    "index.html": "/sales-chart/index.html",
+    "main.b2c57111.css.map": "/sales-chart/static/css/main.b2c57111.css.map",
+    "main.492df109.js.map": "/sales-chart/static/js/main.492df109.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b2c57111.css",
+    "static/js/main.492df109.js"
+  ]
+}
